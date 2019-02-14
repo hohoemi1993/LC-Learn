@@ -20,18 +20,18 @@ public class Solution {
 
         for(int i = 0; i<len; ++i) {
             if ( p >= nums1.length){
-                merge[i++] = nums2[q++];
+                merge[i] = nums2[q++];
                 continue;
             }
             if ( q >= nums2.length){
-                merge[i++] = nums1[p++];
+                merge[i] = nums1[p++];
                 continue;
             }
 
             if (nums1[p] < nums2[q])
-                merge[i++] = nums1[p++];
+                merge[i] = nums1[p++];
             else
-                merge[i++] = nums2[q++];
+                merge[i] = nums2[q++];
         }
 
         if (len % 2 == 1)
