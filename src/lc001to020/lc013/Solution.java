@@ -1,4 +1,4 @@
-package lc013;
+package lc001to020.lc013;
 
 /**
  * Created on 2019/2/15<br>

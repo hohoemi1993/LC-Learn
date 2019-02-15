@@ -1,4 +1,4 @@
-package lc003;
+package lc001to020.lc003;
 
 import java.util.HashMap;
 import java.util.HashSet;

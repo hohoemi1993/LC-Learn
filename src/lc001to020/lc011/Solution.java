@@ -1,4 +1,4 @@
-package lc011;
+package lc001to020.lc011;
 
 /**
  * Created on 2019/2/14<br>
@@ -13,9 +13,9 @@ public class Solution {
     public int maxArea(int[] height) {
         if (height.length < 2) return 0;
         int maxPool = Math.min(height[0],height[1]);
-        int one = 0;
-        int two = 0;
-        int three = 0;
+        int one ;
+        int two ;
+        int three ;
         for (int i=0, j=1; j<height.length - 1;++j) {
             one =(j - i) * Math.min(height[i],height[j]);
             two = (j + 1 - i) * Math.min(height[i],height[j+1]);

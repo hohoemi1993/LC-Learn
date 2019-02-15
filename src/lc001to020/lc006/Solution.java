@@ -1,4 +1,4 @@
-package lc006;
+package lc001to020.lc006;
 
 import java.util.ArrayList;
 import java.util.List;

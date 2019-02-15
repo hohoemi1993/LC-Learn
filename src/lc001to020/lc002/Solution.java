@@ -1,4 +1,4 @@
-package lc002;
+package lc001to020.lc002;
 
 /**
  * l1 and l2 are reverse-ordered

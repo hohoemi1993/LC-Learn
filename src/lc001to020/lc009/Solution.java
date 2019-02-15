@@ -1,7 +1,4 @@
-package lc009;
-
-import java.util.ArrayList;
-import java.util.List;
+package lc001to020.lc009;
 
 /**
  * Created on 2019/2/14<br>
