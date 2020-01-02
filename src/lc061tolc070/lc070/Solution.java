@@ -15,7 +15,7 @@ public class Solution {
         int a = 1;
         int b = 1;
         int ans = 0;
-        for (int i=3; i<=n; ++i) {
+        for (int i = 3; i <= n; ++i) {
             ans = a + b;
             a = b;
             b = ans;

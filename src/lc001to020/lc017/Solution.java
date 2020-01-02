@@ -29,9 +29,9 @@ public class Solution {
     public List<String> letterCombinations001(String digits) {
         List<String> result = new ArrayList<>(digits.length() << 2);
 
-        if (digits.length() == 0 ) return result;
+        if (digits.length() == 0) return result;
 
-        backtracking("",digits, result);
+        backtracking("", digits, result);
 
         return result;
 
@@ -41,10 +41,10 @@ public class Solution {
         if (next.length() == 0) result.add(comb);
 
         else {
-            String digit = next.substring(0,1);
+            String digit = next.substring(0, 1);
             String letters = phone.get(digit);
-            for (int i=0; i< letters.length(); ++i) {
-                backtracking(comb + letters.charAt(i),next.substring(1),result);
+            for (int i = 0; i < letters.length(); ++i) {
+                backtracking(comb + letters.charAt(i), next.substring(1), result);
             }
         }
     }
@@ -60,7 +60,7 @@ public class Solution {
 
         result.add("");
 
-        for (int i=0; i<digits.length(); ++i) {
+        for (int i = 0; i < digits.length(); ++i) {
             String number = digits.substring(i, i + 1);
             char[] letters = phone.get(number).toCharArray();
 
@@ -84,7 +84,7 @@ public class Solution {
 
         while (result.peek().length() != digits.length()) {
             String temp = result.remove();
-            String number = digits.substring(temp.length(),temp.length()+1);
+            String number = digits.substring(temp.length(), temp.length() + 1);
             char[] letters = phone.get(number).toCharArray();
             for (char letter : letters) {
                 result.addLast(temp + letter);

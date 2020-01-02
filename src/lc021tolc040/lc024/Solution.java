@@ -10,7 +10,10 @@ public class Solution {
     private class ListNode {
         int val;
         ListNode next;
-        ListNode(int x) { val = x; }
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 
     public ListNode swapPairs(ListNode head) {

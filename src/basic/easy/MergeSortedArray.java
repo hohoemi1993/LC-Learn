@@ -22,16 +22,16 @@ public class MergeSortedArray {
      * 在不生成新数组的情况下进行merge sort
      */
     public void merge002(int[] nums1, int m, int[] nums2, int n) {
-        int current = m+n-1;
-        int a1 = m-1;
-        int a2 = n-1;
+        int current = m + n - 1;
+        int a1 = m - 1;
+        int a2 = n - 1;
         while (current >= 0) {
-            if (a1 < 0 && a2 >=0) {
+            if (a1 < 0 && a2 >= 0) {
                 nums1[current--] = nums2[a2--];
                 continue;
             }
 
-            if (a2 < 0 && a1 >=0) {
+            if (a2 < 0 && a1 >= 0) {
                 nums1[current--] = nums1[a1--];
                 continue;
             }
@@ -42,7 +42,6 @@ public class MergeSortedArray {
                 nums1[current--] = nums2[a2--];
         }
     }
-
 
 
 }

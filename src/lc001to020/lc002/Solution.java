@@ -8,12 +8,15 @@ class Solution {
     private class ListNode {
         int val;
         ListNode next;
-        ListNode(int x) { val = x;}
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 
     /**
      * Elementary Math
-     *
+     * <p>
      * Time complexity :O(max(m,n)).
      * Space complexity :O(max(m,n)).
      */
@@ -28,7 +31,7 @@ class Solution {
         int carry = 0;
 
         // end with reaching the longer link-list l1 or l2
-        while (p != null || q!= null){
+        while (p != null || q != null) {
             // pad zero
             int x = (p != null) ? p.val : 0;
             int y = (q != null) ? q.val : 0;
@@ -38,11 +41,11 @@ class Solution {
             carry = sum / 10;
             // move point
             current = current.next;
-            if(p != null) p = p.next;
-            if(q != null) q = q.next;
+            if (p != null) p = p.next;
+            if (q != null) q = q.next;
         }
         // the highest digit (1 or none)
-        if(carry > 0) {
+        if (carry > 0) {
             current.next = new ListNode(carry);
         }
 

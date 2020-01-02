@@ -18,12 +18,12 @@ public class Solution {
         int p = 0;
         int q = 0;
 
-        for(int i = 0; i<len; ++i) {
-            if ( p >= nums1.length){
+        for (int i = 0; i < len; ++i) {
+            if (p >= nums1.length) {
                 merge[i] = nums2[q++];
                 continue;
             }
-            if ( q >= nums2.length){
+            if (q >= nums2.length) {
                 merge[i] = nums1[p++];
                 continue;
             }
@@ -35,8 +35,8 @@ public class Solution {
         }
 
         if (len % 2 == 1)
-            return merge[len/2];
+            return merge[len / 2];
         else
-            return (merge[len/2] + merge[len/2 -1]) / 2.0;
+            return (merge[len / 2] + merge[len / 2 - 1]) / 2.0;
     }
 }

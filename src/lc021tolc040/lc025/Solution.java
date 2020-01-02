@@ -20,14 +20,14 @@ public class Solution {
         ListNode next = dummy;
         int length = 0;
         while (cur.next != null) {
-            cur =  cur.next;
+            cur = cur.next;
             length++;
         }
 
         while (length >= k) {
             cur = pre.next;
             next = cur.next;
-            for (int i=1; i<k; i++) {
+            for (int i = 1; i < k; i++) {
                 cur.next = next.next;
                 next.next = pre.next;
                 pre.next = next;

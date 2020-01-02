@@ -11,48 +11,44 @@ public class Solution {
      * boring
      */
     public int romanToInt(String s) {
-        char [] a = s.toCharArray();
+        char[] a = s.toCharArray();
         int result = 0;
-        for(int i = 0; i < a.length; i++){
-            if(i==a.length-1){
+        for (int i = 0; i < a.length; i++) {
+            if (i == a.length - 1) {
                 result += getInt(a[i]);
-            }
-            else if(a[i]=='I' && (a[i+1]=='V' || a[i+1]=='X')) {
+            } else if (a[i] == 'I' && (a[i + 1] == 'V' || a[i + 1] == 'X')) {
                 result -= getInt(a[i]);
-            }
-            else if(a[i]=='X' && (a[i+1]=='L' || a[i+1]=='C')) {
+            } else if (a[i] == 'X' && (a[i + 1] == 'L' || a[i + 1] == 'C')) {
                 result -= getInt(a[i]);
-            }
-            else if(a[i]=='C' && (a[i+1]=='D' || a[i+1]=='M')) {
+            } else if (a[i] == 'C' && (a[i + 1] == 'D' || a[i + 1] == 'M')) {
                 result -= getInt(a[i]);
-            }
-            else {
+            } else {
                 result += getInt(a[i]);
             }
         }
         return result;
     }
 
-    private int getInt(char a){
-        if(a=='I'){
+    private int getInt(char a) {
+        if (a == 'I') {
             return 1;
         }
-        if(a=='V'){
+        if (a == 'V') {
             return 5;
         }
-        if(a=='X'){
+        if (a == 'X') {
             return 10;
         }
-        if(a=='L'){
+        if (a == 'L') {
             return 50;
         }
-        if(a=='C'){
+        if (a == 'C') {
             return 100;
         }
-        if(a=='D'){
+        if (a == 'D') {
             return 500;
         }
-        if(a=='M'){
+        if (a == 'M') {
             return 1000;
         }
         return 0;

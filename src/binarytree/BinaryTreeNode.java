@@ -39,20 +39,22 @@ public class BinaryTreeNode {
     }
 
 
-    public static void preOrder(BinaryTreeNode root){
+    public static void preOrder(BinaryTreeNode root) {
         if (null == root) return;
         System.out.print(root.element + " ");
         preOrder(root.leftChild);
         preOrder(root.rightChild);
     }
-    public static void midOrder(BinaryTreeNode root){
+
+    public static void midOrder(BinaryTreeNode root) {
         if (null == root) return;
 
         midOrder(root.leftChild);
         System.out.print(root.element + " ");
         midOrder(root.rightChild);
     }
-    public static void afterOrder(BinaryTreeNode root){
+
+    public static void afterOrder(BinaryTreeNode root) {
         if (null == root) return;
 
         afterOrder(root.leftChild);
@@ -60,11 +62,11 @@ public class BinaryTreeNode {
         System.out.print(root.element + " ");
     }
 
-    public static void layerOrder(BinaryTreeNode root){
+    public static void layerOrder(BinaryTreeNode root) {
         if (null == root) return;
         int depth = BinaryTreeNode.depth(root);
 
-        for (int i=1; i <= depth; ++i) {
+        for (int i = 1; i <= depth; ++i) {
             BinaryTreeNode.levelOrder(root, i);
         }
     }

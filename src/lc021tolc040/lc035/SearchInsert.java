@@ -8,7 +8,7 @@ package lc021tolc040.lc035;
  */
 public class SearchInsert {
     public int searchInsert(int[] nums, int target) {
-        return biSearch(nums, target, 0, nums.length-1);
+        return biSearch(nums, target, 0, nums.length - 1);
     }
 
     private int biSearch(int[] nums, int target, int start, int end) {
@@ -18,11 +18,9 @@ public class SearchInsert {
         int key = nums[mid];
         if (target > key) {
             return biSearch(nums, target, mid, end);
-        }
-        else if (target < key) {
+        } else if (target < key) {
             return biSearch(nums, target, start, mid);
-        }
-        else {
+        } else {
             return mid;
         }
     }

@@ -15,10 +15,10 @@ public class Solution {
         char c;
         StringBuilder result = new StringBuilder();
         String s = strs[0];
-        for (int i=0; i<s.length();++i){
+        for (int i = 0; i < s.length(); ++i) {
             c = s.charAt(i);
             for (String str : strs) {
-                if(str.length() == i) return result.toString();
+                if (str.length() == i) return result.toString();
                 if (str.charAt(i) != c) return result.toString();
             }
             result.append(s.charAt(i));

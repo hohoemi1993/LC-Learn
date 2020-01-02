@@ -16,8 +16,8 @@ public class Solution {
         int tLen = needle.length();
         int sLen = haystack.length();
 
-        if(tLen > sLen) return -1;
-        if(0 == tLen) return 0;
+        if (tLen > sLen) return -1;
+        if (0 == tLen) return 0;
 
         // kmp
         char[] t = needle.toCharArray();
@@ -26,7 +26,7 @@ public class Solution {
         int i = 0;
         int j = -1;
         next[0] = -1;
-        while (  i < tLen -1) {
+        while (i < tLen - 1) {
             if (j == -1 || t[i] == t[j]) {
                 ++i;
                 ++j;
@@ -34,8 +34,7 @@ public class Solution {
                     next[i] = next[j];
                 else
                     next[i] = j;
-            }
-            else {
+            } else {
                 j = next[j];
             }
         }
@@ -43,17 +42,16 @@ public class Solution {
         char[] s = haystack.toCharArray();
         i = 0;
         j = 0;
-        while (i < sLen && j < tLen){
-            if(j == -1 || s[i] == t[j]) {
+        while (i < sLen && j < tLen) {
+            if (j == -1 || s[i] == t[j]) {
                 ++i;
                 ++j;
-            }
-            else {
+            } else {
                 j = next[j];
             }
         }
 
-        if (j < tLen ) return -1;
+        if (j < tLen) return -1;
         else return i - tLen;
     }
 }

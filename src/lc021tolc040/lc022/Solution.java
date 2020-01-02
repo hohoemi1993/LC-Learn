@@ -19,14 +19,15 @@ public class Solution {
         generate001(ans, "", n, n);
         return ans;
     }
+
     private void generate001(List<String> list, String s, int l, int r) {
-        if (l ==0 && r == 0) {
+        if (l == 0 && r == 0) {
             list.add(s);
             return;
         }
 
-        if(l > 0) generate001(list, s+"(", l-1, r);
-        if(r > l) generate001(list, s+")", l, r-1);
+        if (l > 0) generate001(list, s + "(", l - 1, r);
+        if (r > l) generate001(list, s + ")", l, r - 1);
     }
 
 

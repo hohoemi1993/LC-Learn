@@ -16,25 +16,23 @@ public class Solution {
         int index = 0;
         boolean neg = false;
 
-        if(chars[index] == '+') {
+        if (chars[index] == '+') {
             ++index;
-        }
-
-        else if (chars[index] == '-') {
+        } else if (chars[index] == '-') {
             neg = true;
             ++index;
         }
 
-        long result  = 0;
+        long result = 0;
 
-        for (;index < chars.length; ++index){
+        for (; index < chars.length; ++index) {
             if (chars[index] == ' ' || chars[index] == '.')
                 break;
             if (chars[index] - 48 > 9 || chars[index] - 48 < 0)
                 break;
             result = result * 10 + chars[index] - 48;
             if (result > Integer.MAX_VALUE) {
-                if (neg)  return Integer.MIN_VALUE;
+                if (neg) return Integer.MIN_VALUE;
                 return Integer.MAX_VALUE;
             }
         }

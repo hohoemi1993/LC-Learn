@@ -8,8 +8,6 @@ import java.util.Set;
 /**
  * Created on 2019/2/11<br>
  *
- *
- *
  * @author dengxingda
  * @version 1.0
  */
@@ -34,8 +32,8 @@ public class Solution {
                         flag = false;
                     set.add(ch);
                 }
-                if (flag){
-                    ans = Math.max(ans,j-i);
+                if (flag) {
+                    ans = Math.max(ans, j - i);
                 }
 
             }
@@ -53,16 +51,15 @@ public class Solution {
         int i = 0;
         int j = 0;
         int ans = 0;
-        while(i<len && j<len){
+        while (i < len && j < len) {
 
-            if(slide.contains(s.charAt(j))){
+            if (slide.contains(s.charAt(j))) {
                 slide.remove(s.charAt(i));
                 ++i;
-            }
-            else {
+            } else {
                 slide.add(s.charAt(j));
                 j++;
-                ans = Math.max(ans,j-i);
+                ans = Math.max(ans, j - i);
             }
         }
         return ans;
@@ -72,21 +69,20 @@ public class Solution {
      * Sliding Window Optimized
      * by using hash map char:index
      * T: O(n)
-     *
      */
     public int lengthOfLongestSubstring003(String s) {
-        Map<Character,Integer> slide = new HashMap<>(256);
+        Map<Character, Integer> slide = new HashMap<>(256);
         int len = s.length();
         int i = 0;
         int j = 0;
         int ans = 0;
-        while (i<len && j<len) {
-            if(slide.containsKey(s.charAt(j))){
+        while (i < len && j < len) {
+            if (slide.containsKey(s.charAt(j))) {
                 i = Math.max(i, slide.get(s.charAt(j)) + 1);
             }
-            slide.put(s.charAt(j),j);
+            slide.put(s.charAt(j), j);
             // log the max size of sliding window
-            ans = Math.max(ans, j-i+1);
+            ans = Math.max(ans, j - i + 1);
             j++;
         }
         return ans;

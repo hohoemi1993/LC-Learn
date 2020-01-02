@@ -13,8 +13,8 @@ public class ValidParentheses {
     public boolean isValid(String s) {
         LinkedList<Character> stack = new LinkedList<>();
         char[] chars = s.toCharArray();
-        for(int i=0; i<chars.length;++i) {
-            switch (chars[i]){
+        for (int i = 0; i < chars.length; ++i) {
+            switch (chars[i]) {
                 case '(':
                     stack.push('(');
                     break;
@@ -25,16 +25,16 @@ public class ValidParentheses {
                     stack.push('{');
                     break;
                 case ')':
-                    if(stack.isEmpty()) return false;
-                    if('(' != stack.pop()) return false;
+                    if (stack.isEmpty()) return false;
+                    if ('(' != stack.pop()) return false;
                     break;
                 case ']':
-                    if(stack.isEmpty()) return false;
-                    if('[' != stack.pop()) return false;
+                    if (stack.isEmpty()) return false;
+                    if ('[' != stack.pop()) return false;
                     break;
                 case '}':
-                    if(stack.isEmpty()) return false;
-                    if('{' != stack.pop()) return false;
+                    if (stack.isEmpty()) return false;
+                    if ('{' != stack.pop()) return false;
                     break;
             }
 
