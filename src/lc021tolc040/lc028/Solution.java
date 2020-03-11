@@ -1,5 +1,6 @@
 package lc021tolc040.lc028;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -15,7 +16,6 @@ public class Solution {
 
         int tLen = needle.length();
         int sLen = haystack.length();
-
         if (tLen > sLen) return -1;
         if (0 == tLen) return 0;
 

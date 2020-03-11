@@ -1,4 +1,4 @@
-package lc001to020.lc020;
+package lc001to020.lc020有效的括号;
 
 import java.util.LinkedList;
 
