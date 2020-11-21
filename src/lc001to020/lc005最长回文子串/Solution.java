@@ -1,10 +1,17 @@
-package lc001to020.lc005;
+package lc001to020.lc005最长回文子串;
 
 /**
  * Created on 2019/2/12<br>
  * <p>
  * dynamic programming
- *
+ * 分析
+ *  回文基本构成:  a, aba , aa
+ *  状态:
+ *      - 是回文
+ *      - 不是回文
+ *  递推公式:
+ *      P(i+1, j-1) = P(i, j) && (Si+1 == Sj-1)
+ *  重复子问题:
  * @author dengxingda
  * @version 1.0
  */
