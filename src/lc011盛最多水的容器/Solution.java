@@ -9,21 +9,21 @@ public class Solution {
     int area = 0;
 
     while (i < j) {
-      area = Math.max(area,  (j - i) * Math.min(height[i], height[j]));
+      area = Math.max(area, (j - i) * Math.min(height[i], height[j]));
       if (height[i] < height[j]) {
         for (int k = 1; k < j - i; k++) {
-          if (height[i+k] > height[i]) {
+          if (height[i + k] > height[i]) {
             i += k;
-            area = Math.max(area,  (j - i) * Math.min(height[i], height[j]));
+            area = Math.max(area, (j - i) * Math.min(height[i], height[j]));
             break;
           }
           if (k == j - i) return area;
         }
       } else {
         for (int k = 1; k < j - i; k++) {
-          if (height[j-k] > height[j]) {
+          if (height[j - k] > height[j]) {
             j -= k;
-            area = Math.max(area,  (j - i) * Math.min(height[i], height[j]));
+            area = Math.max(area, (j - i) * Math.min(height[i], height[j]));
             break;
           }
           if (k == j - i) return area;
@@ -37,5 +37,20 @@ public class Solution {
     }
 
     return area;
+  }
+
+  public int maxAreaOffice(int[] height) {
+    int l = 0, r = height.length - 1;
+    int ans = 0;
+    while (l < r) {
+      int area = Math.min(height[l], height[r]) * (r - l);
+      ans = Math.max(ans, area);
+      if (height[l] <= height[r]) {
+        ++l;
+      } else {
+        --r;
+      }
+    }
+    return ans;
   }
 }
